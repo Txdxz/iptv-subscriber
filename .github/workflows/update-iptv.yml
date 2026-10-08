@@ -51,12 +51,16 @@ jobs:
           mkdir -p ./public
           # 若用户在 GitHub Secret 中配置了 SUBSCRIBE_KEY 则使用，否则回退到私有混淆后缀
           KEY="${SUBSCRIBE_KEY:-feed_8a7c2e}"
+          # 自动剔除可能误填的 .m3u 后缀，避免重复拼接为 .m3u.m3u
+          CLEAN_KEY="${KEY%.m3u}"
           
           if [ -f "./data/current.m3u" ]; then
-            cp ./data/current.m3u "./public/${KEY}.m3u"
+            # 同时生成带 .m3u 和不带后缀的文件，确保怎么输入都能正常访问
+            cp ./data/current.m3u "./public/${CLEAN_KEY}.m3u"
+            cp ./data/current.m3u "./public/${CLEAN_KEY}"
           fi
           if [ -f "./data/state.json" ]; then
-            cp ./data/state.json "./public/${KEY}_status.json"
+            cp ./data/state.json "./public/${CLEAN_KEY}_status.json"
           fi
           
           # 部署根目录 404 伪装页面，隐藏目录列表，阻断直接扫域名
