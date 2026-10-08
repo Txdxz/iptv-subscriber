@@ -1,0 +1,23 @@
+{
+  "last_run_time": "2026-10-08T08:58:44.201Z",
+  "last_success_time": "2026-10-08T08:58:07.162Z",
+  "consecutive_failures": 0,
+  "current_source": {
+    "ip": "110.255.177.161",
+    "p": "aL6TgmGWAdfDwnHGODYNbw",
+    "t": "multicast",
+    "s": "fbpwxDZ0TrLIZsPiq5dZuA",
+    "type": "山西太原组播 山西电信",
+    "count": 119,
+    "status": "存活4天",
+    "update_time": "2026-10-08 11:33:26",
+    "tier": {
+      "id": 1,
+      "name": "山西太原 山西电信",
+      "province": "山西",
+      "city": "太原",
+      "isp": "电信"
+    }
+  },
+  "last_error": null
+}
