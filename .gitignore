@@ -1,0 +1,5 @@
+node_modules/
+data/*.m3u
+data/history/
+.DS_Store
+*.log
