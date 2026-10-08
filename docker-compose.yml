@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  iptv-subscriber:
+    build: .
+    container_name: iptv-subscriber
+    restart: unless-stopped
+    ports:
+      - "8088:8088"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      # 持久化存储 M3U 文件、历史版本与运行状态
+      - ./data:/app/data
+      - ./config.json:/app/config.json:ro

@@ -1,0 +1,56 @@
+{
+  "site": {
+    "base_url": "https://iptv.cqshushu.com",
+    "index_path": "/index.php",
+    "request_timeout_ms": 15000,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+  },
+  "server": {
+    "port": 8088,
+    "host": "0.0.0.0",
+    "m3u_route": "/iptv/current.m3u",
+    "status_route": "/iptv/status",
+    "auth_token": "",
+    "cache_control": "no-cache, no-store, must-revalidate"
+  },
+  "schedule": {
+    "daily_time": "17:00",
+    "timezone": "Asia/Shanghai",
+    "run_on_startup": true
+  },
+  "priorities": [
+    { "id": 1, "name": "山西太原 山西电信", "province": "山西", "city": "太原", "isp": "电信" },
+    { "id": 2, "name": "山西太原 山西联通", "province": "山西", "city": "太原", "isp": "联通" },
+    { "id": 3, "name": "山西其他城市电信", "province": "山西", "city_not": "太原", "isp": "电信" },
+    { "id": 4, "name": "山西其他城市联通", "province": "山西", "city_not": "太原", "isp": "联通" },
+    { "id": 5, "name": "山西其他城市移动", "province": "山西", "city_not": "太原", "isp": "移动" },
+    { "id": 6, "name": "天津 天津联通", "province": "天津", "city": "天津", "isp": "联通" },
+    { "id": 7, "name": "北京 北京联通", "province": "北京", "city": "北京", "isp": "联通" },
+    { "id": 8, "name": "上海 上海电信", "province": "上海", "city": "上海", "isp": "电信" },
+    { "id": 9, "name": "上海 上海联通", "province": "上海", "city": "上海", "isp": "联通" }
+  ],
+  "validation": {
+    "enable_stream_probe": false,
+    "probe_channels_count": 3,
+    "probe_timeout_ms": 3000,
+    "min_pass_channels": 1,
+    "min_channels_threshold": 10
+  },
+  "storage": {
+    "data_dir": "./data",
+    "current_m3u_file": "./data/current.m3u",
+    "state_file": "./data/state.json",
+    "history_dir": "./data/history",
+    "max_history_files": 7,
+    "lock_file": "./data/task.lock"
+  },
+  "notification": {
+    "enabled": true,
+    "webhook_url": "",
+    "notify_on_first_success": true,
+    "notify_on_source_change": true,
+    "notify_on_all_failed": true,
+    "notify_on_consecutive_failures": 3,
+    "notify_on_retained_same": false
+  }
+}

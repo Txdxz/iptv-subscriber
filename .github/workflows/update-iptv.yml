@@ -1,0 +1,55 @@
+name: Daily IPTV Auto Update & Publish
+
+on:
+  schedule:
+    # 每天北京时间 17:00 (UTC 09:00) 自动执行
+    - cron: '0 9 * * *'
+  workflow_dispatch: # 支持在 GitHub 页面随时手动一键触发
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "iptv-pages"
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run IPTV Source Selection
+        env:
+          QYWX_WEBHOOK_URL: ${{ secrets.QYWX_WEBHOOK_URL }}
+        run: |
+          node src/cli.js --run-now
+
+      - name: Prepare Pages Artifact
+        run: |
+          mkdir -p ./public
+          # 将当前最新生成的 M3U 复制到 public 目录
+          if [ -f "./data/current.m3u" ]; then
+            cp ./data/current.m3u ./public/current.m3u
+          fi
+          # 生成一个简易 status 页面
+          if [ -f "./data/state.json" ]; then
+            cp ./data/state.json ./public/status.json
+          fi
+
+      - name: Upload GitHub Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

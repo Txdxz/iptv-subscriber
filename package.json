@@ -1,0 +1,20 @@
+{
+  "name": "iptv-subscriber",
+  "version": "1.0.0",
+  "description": "IPTV 源每日自动筛选 + 固定 M3U 订阅服务",
+  "main": "src/scheduler.js",
+  "scripts": {
+    "start": "node src/scheduler.js",
+    "run-now": "node src/cli.js --run-now",
+    "status": "node src/cli.js --status",
+    "rollback": "node src/cli.js --rollback",
+    "test": "node tests/run_tests.js"
+  },
+  "keywords": [
+    "iptv",
+    "m3u",
+    "subscriber"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}
