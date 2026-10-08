@@ -1,4 +1,4 @@
-name: Daily IPTV Auto Update & Publish
+name: Daily Feed Auto Update & Sync
 
 on:
   schedule:
@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "iptv-pages"
+  group: "feed-pages"
   cancel-in-progress: false
 
 jobs:
@@ -27,30 +27,49 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run IPTV Source Selection
+      - name: Run Source Selection
         env:
           QYWX_WEBHOOK_URL: ${{ secrets.QYWX_WEBHOOK_URL }}
         run: |
           node src/cli.js --run-now
 
-      - name: Commit State & M3U (Keep History & Continuation)
+      - name: Commit State & Cleanup Git Tracked Files
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto update iptv data [skip ci]" && git push origin main)
+          # 从 Git 仓库跟踪中移除明文 m3u 文件（确保外人无法通过 git 查看或下载完整列表）
+          git rm -f data/current.m3u 2>/dev/null || true
+          git rm -rf data/history 2>/dev/null || true
+          # 仅跟踪状态元数据与 .gitignore
+          git add data/state.json .gitignore
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync feed state [skip ci]" && git push origin main)
 
-      - name: Prepare Pages Artifact
+      - name: Prepare Obfuscated Pages Artifact
+        env:
+          SUBSCRIBE_KEY: ${{ secrets.SUBSCRIBE_KEY }}
         run: |
           mkdir -p ./public
-          # 将当前最新生成的 M3U 复制到 public 目录
+          # 若用户在 GitHub Secret 中配置了 SUBSCRIBE_KEY 则使用，否则回退到私有混淆后缀
+          KEY="${SUBSCRIBE_KEY:-feed_8a7c2e}"
+          
           if [ -f "./data/current.m3u" ]; then
-            cp ./data/current.m3u ./public/current.m3u
+            cp ./data/current.m3u "./public/${KEY}.m3u"
           fi
-          # 生成一个简易 status 页面
           if [ -f "./data/state.json" ]; then
-            cp ./data/state.json ./public/status.json
+            cp ./data/state.json "./public/${KEY}_status.json"
           fi
+          
+          # 部署根目录 404 伪装页面，隐藏目录列表，阻断直接扫域名
+          cat << 'EOF' > ./public/index.html
+          <!DOCTYPE html>
+          <html>
+          <head><meta charset="utf-8"><title>404 Not Found</title></head>
+          <body style="font-family:sans-serif;text-align:center;padding:50px;">
+            <h2>404 Not Found</h2>
+            <p>The requested resource was not found on this server.</p>
+          </body>
+          </html>
+          EOF
 
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v3
