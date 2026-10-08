@@ -1,7 +1,7 @@
 {
-  "name": "iptv-subscriber",
+  "name": "stream-feed-sync",
   "version": "1.0.0",
-  "description": "IPTV 源每日自动筛选 + 固定 M3U 订阅服务",
+  "description": "A scheduled feed dispatcher and synchronizer.",
   "main": "src/scheduler.js",
   "scripts": {
     "start": "node src/scheduler.js",
@@ -11,9 +11,9 @@
     "test": "node tests/run_tests.js"
   },
   "keywords": [
-    "iptv",
-    "m3u",
-    "subscriber"
+    "feed",
+    "sync",
+    "scheduler"
   ],
   "author": "Antigravity",
   "license": "MIT"
