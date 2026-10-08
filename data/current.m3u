@@ -1,0 +1,49 @@
+#EXTM3U x-tvg-url="https://fy.188766.xyz/e.xml" tvg-shift="0"
+#EXTINF:-1 tvg-id="CCTV1高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV1高清.png" group-title="山西太原组播 山西电信",CCTV1高清
+http://110.177.177.161:5555/rtp/239.1.1.7:8007
+#EXTINF:-1 tvg-id="CCTV2高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV2高清.png" group-title="山西太原组播 山西电信",CCTV2高清
+http://110.177.177.161:5555/rtp/239.1.1.8:8008
+#EXTINF:-1 tvg-id="CCTV3高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV3高清.png" group-title="山西太原组播 山西电信",CCTV3高清
+http://110.177.177.161:5555/rtp/239.1.1.9:8009
+#EXTINF:-1 tvg-id="CCTV4高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV4高清.png" group-title="山西太原组播 山西电信",CCTV4高清
+http://110.177.177.161:5555/rtp/239.1.1.10:8010
+#EXTINF:-1 tvg-id="CCTV5高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV5高清.png" group-title="山西太原组播 山西电信",CCTV5高清
+http://110.177.177.161:5555/rtp/239.1.1.11:8011
+#EXTINF:-1 tvg-id="CCTV5+高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV5+高清.png" group-title="山西太原组播 山西电信",CCTV5+高清
+http://110.177.177.161:5555/rtp/239.1.1.12:8012
+#EXTINF:-1 tvg-id="CCTV6高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV6高清.png" group-title="山西太原组播 山西电信",CCTV6高清
+http://110.177.177.161:5555/rtp/239.1.1.13:8013
+#EXTINF:-1 tvg-id="CCTV7" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV7.png" group-title="山西太原组播 山西电信",CCTV7
+http://110.177.177.161:5555/rtp/239.1.1.14:8014
+#EXTINF:-1 tvg-id="CCTV8高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV8高清.png" group-title="山西太原组播 山西电信",CCTV8高清
+http://110.177.177.161:5555/rtp/239.1.1.15:8015
+#EXTINF:-1 tvg-id="CCTV9高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV9高清.png" group-title="山西太原组播 山西电信",CCTV9高清
+http://110.177.177.161:5555/rtp/239.1.1.16:8016
+#EXTINF:-1 tvg-id="CCTV10高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV10高清.png" group-title="山西太原组播 山西电信",CCTV10高清
+http://110.177.177.161:5555/rtp/239.1.1.17:8017
+#EXTINF:-1 tvg-id="CCTV11高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV11高清.png" group-title="山西太原组播 山西电信",CCTV11高清
+http://110.177.177.161:5555/rtp/239.1.1.18:8018
+#EXTINF:-1 tvg-id="CCTV12高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV12高清.png" group-title="山西太原组播 山西电信",CCTV12高清
+http://110.177.177.161:5555/rtp/239.1.1.19:8019
+#EXTINF:-1 tvg-id="CCTV13" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV13.png" group-title="山西太原组播 山西电信",CCTV13
+http://110.177.177.161:5555/rtp/239.1.1.20:8020
+#EXTINF:-1 tvg-id="CCTV14高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV14高清.png" group-title="山西太原组播 山西电信",CCTV14高清
+http://110.177.177.161:5555/rtp/239.1.1.21:8021
+#EXTINF:-1 tvg-id="CCTV15" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV15.png" group-title="山西太原组播 山西电信",CCTV15
+http://110.177.177.161:5555/rtp/239.1.1.22:8022
+#EXTINF:-1 tvg-id="CCTV17高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV17高清.png" group-title="山西太原组播 山西电信",CCTV17高清
+http://110.177.177.161:5555/rtp/239.1.1.48:8048
+#EXTINF:-1 tvg-id="CCTV4K超高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV4K超高清.png" group-title="山西太原组播 山西电信",CCTV4K超高清
+http://110.177.177.161:5555/rtp/239.1.1.47:8047
+#EXTINF:-1 tvg-id="山西卫视高清" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/山西卫视高清.png" group-title="山西太原组播 山西电信",山西卫视高清
+http://110.177.177.161:5555/rtp/239.1.1.24:8024
+#EXTINF:-1 tvg-id="山西黄河" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/山西黄河.png" group-title="山西太原组播 山西电信",山西黄河
+http://110.177.177.161:5555/rtp/239.1.1.25:8025
+#EXTINF:-1 tvg-id="山西经济与科技" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/山西经济与科技.png" group-title="山西太原组播 山西电信",山西经济与科技
+http://110.177.177.161:5555/rtp/239.1.1.26:8026
+#EXTINF:-1 tvg-id="山西文体生活" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/山西文体生活.png" group-title="山西太原组播 山西电信",山西文体生活
+http://110.177.177.161:5555/rtp/239.1.1.27:8027
+#EXTINF:-1 tvg-id="山西影视" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/山西影视.png" group-title="山西太原组播 山西电信",山西影视
+http://110.177.177.161:5555/rtp/239.1.1.28:8028
+#EXTINF:-1 tvg-id="山西社会与法治" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/山西社会与法治.png" group-title="山西太原组播 山西电信",山西社会与法治
+http://110.177.177.161:5555/rtp/239.1.1.29:8029
